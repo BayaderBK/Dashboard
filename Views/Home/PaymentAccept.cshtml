@@ -1,0 +1,25 @@
+﻿@model PaymentAccept
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<div class="container-fluid mt-4 d-flex justify-content-center">
+    <form asp-action="PaymentAccept" method="post">
+    <div class="row">
+            <h1 class="text-center">يرجى إدخال بطاقة الدفع لإعتمادها</h1>
+        <div class="col">
+            <input asp-for="@Model.Payment" class="form-control" id="payment" />
+        </div>
+    </div>
+        <span class="text-danger" asp-validation-for="@Model.Payment"></span>
+    <div class="row m-5">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-9">
+            <button type="submit" class="btn btn-primary">حفظ</button>
+        </div>
+    </div>
+    </form>
+</div>
